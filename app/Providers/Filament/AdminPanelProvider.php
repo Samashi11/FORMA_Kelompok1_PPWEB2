@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Providers\Filament;
+
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -16,17 +17,16 @@ use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use App\Http\Livewire\Auth\CustomLogin;
-
 
 class AdminPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
         return $panel
-            ->id('admin') // wajib: ID unik panel
-            ->path('admin') // wajib: menentukan prefix route (/admin)
-            ->login(CustomLogin::class) // ganti login bawaan dengan custom
+            ->default()
+            ->id('admin')
+            ->path('admin')
+            ->login()
             ->colors([
                 'primary' => Color::Amber,
             ])
@@ -50,10 +50,10 @@ class AdminPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
+                \App\Http\Middleware\IsAdmin::class,
             ])
             ->authMiddleware([
                 Authenticate::class,
             ]);
     }
-
 }
