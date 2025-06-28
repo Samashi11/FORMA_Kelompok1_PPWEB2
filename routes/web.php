@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrganizationController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\ForumController;
 
 Route::get('/', function () {
 	return view('landings');
@@ -17,12 +18,16 @@ Route::get('/organization/{id}', [OrganizationController::class, 'show'])->name(
 
 Route::get('/event', [EventController::class, 'index'])->name('event');
 
+
 Route::get('/event/{id}', [EventController::class, 'show'])->name('event.show');
 
 Route::get('/create-event', [EventController::class, 'create'])->middleware(['auth', 'verified'])->name('event.create');
 
 Route::post('/event', [EventController::class, 'store'])->middleware(['auth', 'verified'])->name('event.store');
 // Route::get('/dashboard', [EventController::class, 'indexHome'])->middleware(['auth', 'verified'])->name('dashboard');
+
+
+Route::get('/forum', [ForumController::class, 'index'])->name('forum');
 
 Route::middleware('auth')->group(function () {
 	Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
