@@ -154,9 +154,15 @@
             @if (Route::has('login'))
                 <nav class="flex items-center justify-end gap-4">
                     @auth
+                        @if (Auth::user()->role == 'anggota')
+                            <a href="{{ route('event.create') }}"
+                                class="btn-primary flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 text-sm font-semibold leading-normal tracking-[0.015em] shadow-sm">
+                                Tambah Event
+                            </a>
+                        @endif
                         <!-- Settings Dropdown -->
                         <div class="hidden sm:flex sm:items-center sm:ms-6">
-                            <x-dropdown align="rig---ht" width="48">
+                            <x-dropdown align="right" width="48">
                                 <x-slot name="trigger">
                                     <button
                                         class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-white-800 hover:text-gray-700 dark:hover:text-gray-800 focus:outline-none transition ease-in-out duration-150">
@@ -187,7 +193,7 @@
 
                                         <x-dropdown-link :href="route('logout')"
                                             onclick="event.preventDefault();
-																														this.closest('form').submit();">
+											this.closest('form').submit();">
                                             {{ __('Log Out') }}
                                         </x-dropdown-link>
                                     </form>

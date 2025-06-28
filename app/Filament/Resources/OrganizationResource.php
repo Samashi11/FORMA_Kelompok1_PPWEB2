@@ -49,6 +49,37 @@ class OrganizationResource extends Resource
 					])
 					->required()
 					->label('Tipe Organisasi'),
+
+				Forms\Components\TextInput::make('ketua')
+					->maxLength(255)
+					->label('Ketua Organisasi'),
+
+				Forms\Components\Textarea::make('visi')
+					->maxLength(500)
+					->label('Visi Organisasi'),
+
+				Forms\Components\Textarea::make('misi')
+					->maxLength(500)
+					->label('Misi Organisasi'),
+
+				Forms\Components\TextInput::make('jumlah_anggota')
+					->numeric()
+					->minValue(0)
+					->label('Jumlah Anggota'),
+
+				Forms\Components\TextInput::make('email')
+					->email()
+					->maxLength(255)
+					->label('Email Organisasi'),
+
+				Forms\Components\TextInput::make('website')
+					->url()
+					->maxLength(255)
+					->label('Website Organisasi'),
+
+				Forms\Components\DatePicker::make('established_at')
+					->label('Tanggal Berdiri')
+					->placeholder('Pilih tanggal berdiri organisasi'),
 			])->columns(2);
 	}
 
@@ -70,7 +101,7 @@ class OrganizationResource extends Resource
 					->sortable()
 					->label('Tipe'),
 
-				Tables\Columns\TextColumn::make('created_at')
+				Tables\Columns\TextColumn::make('established_at')
 					->dateTime()
 					->sortable()
 					->label('Dibuat Pada'),

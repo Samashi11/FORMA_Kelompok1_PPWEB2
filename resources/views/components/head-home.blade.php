@@ -28,6 +28,37 @@
             font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;
         }
 
+        .form-input {
+            @apply border rounded px-4 py-2;
+            background-color: var(--input-background);
+            border-color: var(--border-color);
+
+        }
+
+        .form-input:focus {
+            @apply border outline-none transition-shadow duration-200;
+            border-color: var(--input-border-focus);
+            box-shadow: 0 0 0 2px rgba(25, 120, 229, 0.2);
+        }
+
+        .btn-primary {
+            @apply px-4 py-2 rounded font-semibold transition;
+            background-color: var(--primary-color);
+            color: var(--background-color);
+        }
+
+        .btn-secondary {
+            @apply px-4 py-2 rounded;
+            background-color: #e2e8f0;
+            color: var(--text-primary);
+        }
+
+        .nav-link-active {
+            @apply text-[var(--primary-color)] font-semibold;
+            /* color: var(--primary-color);
+            font-weight: 600; */
+        }
+
         .nav-link {
             @apply text-[var(--text-primary)] text-sm font-medium leading-normal transition-colors hover:text-[var(--primary-color)];
         }

@@ -13,6 +13,13 @@ class Organization extends Model
 		'description',
 		'logo',
 		'type',
+		'ketua',
+		'visi',
+		'misi',
+		'jumlah_anggota',
+		'email',
+		'website',
+		'established_at',
 	];
 
 	public function forum()

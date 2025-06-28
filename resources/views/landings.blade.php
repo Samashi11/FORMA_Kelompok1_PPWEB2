@@ -95,10 +95,13 @@
                             <nav class="flex items-center justify-end gap-4">
                                 @auth
                                     {{-- <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-[var(--primary-color)] shadow-sm" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDAdiz0iXaZ6d07jjE8U5mTtqAT_j071S1NNchO5yMwazmLM8Wc-VAVo6nSlOA0CUbf2UbljcIi3dopMtHNvVuDFFQFOo4PbXSxBbyRVY60suy2t-YVL2NZCRpg01mgflWKrkXAOSyk225LwzodeZ-RG_4NmK5XQGb97rkOb-515CKo8rZmBbyHrN4sa8xOzyXm7MCb4eIJiM8adelkzaoB-QVW5EJNsI0keAdGukYksGScBMyoxqG59iZA4fxehNP-IHt2OftkgaBH");'></div> --}}
-                                    <a href="{{ url('/home') }}"
+                                    {{-- <a href="{{ url('/home') }}"
                                         class="btn-primary flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 text-sm font-semibold leading-normal tracking-[0.015em] shadow-sm">
                                         Dashboard
-                                    </a>
+                                    </a> --}}
+                                    {{-- <a href="{{ route('home') }}" class="btn-primary flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 text-sm font-semibold leading-normal tracking-[0.015em] shadow-sm">
+                                        Dashboard
+                                    </a> --}}
                                 @else
                                     <button
                                         class="btn-primary flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 text-sm font-semibold leading-normal tracking-[0.015em] shadow-sm">
@@ -305,7 +308,11 @@
             </footer>
         </div>
     </div>
-
+    @auth
+        <script>
+            window.location.href = "{{ route('home') }}";
+        </script>
+    @endauth
 </body>
 
 </html>

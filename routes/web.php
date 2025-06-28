@@ -19,13 +19,10 @@ Route::get('/event', [EventController::class, 'index'])->name('event');
 
 Route::get('/event/{id}', [EventController::class, 'show'])->name('event.show');
 
-// Route::get('/organization', function () {
-// 	return view('organization');
-// })->middleware(['auth', 'verified'])->name('organization');
+Route::get('/create-event', [EventController::class, 'create'])->middleware(['auth', 'verified'])->name('event.create');
 
-// Route::get('/dashboard', function () {
-// 	return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
+Route::post('/event', [EventController::class, 'store'])->middleware(['auth', 'verified'])->name('event.store');
+// Route::get('/dashboard', [EventController::class, 'indexHome'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
 	Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

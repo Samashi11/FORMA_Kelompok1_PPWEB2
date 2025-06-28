@@ -40,10 +40,30 @@
             </div>
         </section>
         <section class="py-16 md:py-24 bg-white">
-          <div class="container mx-auto px-6">
-              <h2 class="section-title text-center mb-12">Upcoming Events</h2>
-              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-center mb-12">Upcoming Events</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     @foreach ($events as $eve)
+                        {{-- Debug sementara --}}
+                        {{-- <p>{{ Auth::user()->role }} - {{ $eve->status }}</p> --}}
+                        @if (Auth::user()->role === 'mahasiswa' && $eve->status === 'approved')
+                            <div class="card">
+                                <div class="w-full h-48 bg-center bg-no-repeat bg-cover"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB1mg5-0pPwbIxFyTIZRaF73zNnNy7szOINt1kJfb9xQESrqKHouE8H7QsjBxf-4MDbrv1TBqKRBAIwF0hF3RkMIVFsrJ8UshtvxWX4kXv4c_V7oG4QNgqoVT2fs_9BimhhOXmxrR482rrym5p64L2pCIYwixup6HvPosixRknxznhO2sUwVmpNeCdRiUB5z8jXqBfJFIXH95WrgX3ZgwXftGplmm-dJR1hStUgrNLV3k8f6s3QjxjuRatjcI2c6GQNvaJmJGcBxVrn");'>
+                                </div>
+                                <div class="p-6">
+                                    <p
+                                        class="text-xs text-[var(--primary-color)] font-semibold uppercase tracking-wider mb-1">
+                                        {{ \Carbon\Carbon::parse($eve->event_date)->format('F j, Y') }}</p>
+                                    <h3 class="text-lg font-semibold text-[var(--text-primary)] mb-1">
+                                        {{ $eve->title }}
+                                    </h3>
+                                    <p class="text-sm text-[var(--text-secondary)] mb-3">{{ $eve->description }}</p>
+                                    <a class="text-sm text-[var(--primary-color)] font-medium hover:underline"
+                                        href="{{ route('event.show', $eve->id) }}">Event Details →</a>
+                                </div>
+                            </div>
+                        @elseif (Auth::user()->role === 'anggota')
                         <div class="card">
                           <div class="w-full h-48 bg-center bg-no-repeat bg-cover"
                               style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB1mg5-0pPwbIxFyTIZRaF73zNnNy7szOINt1kJfb9xQESrqKHouE8H7QsjBxf-4MDbrv1TBqKRBAIwF0hF3RkMIVFsrJ8UshtvxWX4kXv4c_V7oG4QNgqoVT2fs_9BimhhOXmxrR482rrym5p64L2pCIYwixup6HvPosixRknxznhO2sUwVmpNeCdRiUB5z8jXqBfJFIXH95WrgX3ZgwXftGplmm-dJR1hStUgrNLV3k8f6s3QjxjuRatjcI2c6GQNvaJmJGcBxVrn");'>
@@ -52,16 +72,40 @@
                               <p
                                   class="text-xs text-[var(--primary-color)] font-semibold uppercase tracking-wider mb-1">
                                   {{ \Carbon\Carbon::parse($eve->event_date)->format('F j, Y') }}</p>
-                              <h3 class="text-lg font-semibold text-[var(--text-primary)] mb-1">{{ $eve->title }}</h3>
+                              <h3 class="text-lg font-semibold text-[var(--text-primary)] mb-1">
+                                  {{ $eve->title }}
+                              </h3>
                               <p class="text-sm text-[var(--text-secondary)] mb-3">{{ $eve->description }}</p>
+                              <p
+                                  class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-red-600/10 ring-inset mb-3">
+                                  {{ $eve->status }}</p>
+                              <br>
                               <a class="text-sm text-[var(--primary-color)] font-medium hover:underline"
                                   href="{{ route('event.show', $eve->id) }}">Event Details →</a>
                           </div>
                       </div>
+                        @else
+                            
+                        @endif
+
+                        {{-- <div class="card">
+                            <div class="w-full h-48 bg-center bg-no-repeat bg-cover"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB1mg5-0pPwbIxFyTIZRaF73zNnNy7szOINt1kJfb9xQESrqKHouE8H7QsjBxf-4MDbrv1TBqKRBAIwF0hF3RkMIVFsrJ8UshtvxWX4kXv4c_V7oG4QNgqoVT2fs_9BimhhOXmxrR482rrym5p64L2pCIYwixup6HvPosixRknxznhO2sUwVmpNeCdRiUB5z8jXqBfJFIXH95WrgX3ZgwXftGplmm-dJR1hStUgrNLV3k8f6s3QjxjuRatjcI2c6GQNvaJmJGcBxVrn");'>
+                            </div>
+                            <div class="p-6">
+                                <p
+                                    class="text-xs text-[var(--primary-color)] font-semibold uppercase tracking-wider mb-1">
+                                    {{ \Carbon\Carbon::parse($eve->event_date)->format('F j, Y') }}</p>
+                                <h3 class="text-lg font-semibold text-[var(--text-primary)] mb-1">{{ $eve->title }}
+                                </h3>
+                                <p class="text-sm text-[var(--text-secondary)] mb-3">{{ $eve->description }}</p>
+                                <a class="text-sm text-[var(--primary-color)] font-medium hover:underline"
+                                    href="{{ route('event.show', $eve->id) }}">Event Details →</a>
+                            </div>
+                        </div> --}}
                     @endforeach
                     <div class="card">
-                        <div class="w-full h-56 bg-center bg-no-repeat bg-cover"
-                            style='''>
+                        <div class="w-full h-56 bg-center bg-no-repeat bg-cover" style='''>
                         </div>
                         <div class="p-6">
                             <h3 class="text-xl font-semibold text-[var(--text-primary)] mb-2">Tech Innovators

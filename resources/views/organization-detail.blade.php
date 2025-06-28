@@ -7,7 +7,8 @@
     @include('layouts.navigation')
 
     <main class="px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-8">
-        <div class="layout-content-container flex flex-col max-w-4xl flex-1 bg-[var(--background-primary)] rounded-xl shadow-lg overflow-hidden">
+        <div
+            class="layout-content-container flex flex-col max-w-4xl flex-1 bg-[var(--background-primary)] rounded-xl shadow-lg overflow-hidden">
             <div class="bg-slate-100 p-6 md:p-8 border-b border-slate-200">
                 <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                     <h1 class="text-[var(--text-primary)] tracking-tight text-3xl font-bold leading-tight">
@@ -30,10 +31,10 @@
                     </p>
                     <div class="flex items-center gap-2 text-[var(--text-secondary)] text-sm mt-2">
                         <i class="material-icons text-lg">group</i>
-                        <span>120 members</span>
+                        <span>{{ $organizations->jumlah_anggota }} Anggota</span>
                         <span class="mx-1">•</span>
                         <i class="material-icons text-lg">calendar_today</i>
-                        <span>Established 2020</span>
+                        <span>Established {{ substr($organizations->established_at, 0, 4) }}</span>
                     </div>
                 </div>
             </div>
@@ -42,25 +43,27 @@
                     <a class="tab-link active-tab" href="#">About</a>
                     <a class="tab-link inactive-tab" href="#">Discussion</a>
                     <a class="tab-link inactive-tab" href="#">Events</a>
-                    <a class="tab-link inactive-tab" href="#">Members</a>
+                    <a class="tab-link inactive-tab" href="#">Memberss</a>
                 </div>
             </div>
             <div class="p-6 md:p-8">
                 <section class="mb-8">
                     <h3 class="text-[var(--text-primary)] text-xl font-semibold leading-tight tracking-[-0.015em] mb-4">
-                        Our Mission &amp; Vision</h3>
+                        Our Vission &amp; Mission</h3>
                     <div class="grid grid-cols-1 md:grid-cols-[max-content_1fr] gap-x-6 gap-y-4">
                         <div class="info-grid-item">
-                            <p class="info-label font-medium">Mission</p>
-                            <p class="info-value">To empower students with the knowledge and skills to excel in
-                                the tech industry through hands-on projects, collaborative learning, and
-                                industry connections.</p>
+                            <p class="info-label font-medium">Vission</p>
+                            <p class="info-value">{{ $organizations->visi }}</p>
                         </div>
                         <div class="info-grid-item">
-                            <p class="info-label font-medium">Vision</p>
-                            <p class="info-value">To be the leading student organization for technology and
-                                innovation on campus, recognized for fostering a culture of creativity and
-                                practical problem-solving.</p>
+                            <p class="info-label font-medium">Mission</p>
+                            {{-- <p class="info-value"> --}}
+                            <ul class="info-value">
+                                @foreach (explode('.', $organizations->misi) as $misi)
+                                    <li>{{ $misi }}</li><br>
+                                @endforeach
+                            </ul>
+                            {{-- </p> --}}
                         </div>
                         <div class="info-grid-item">
                             <p class="info-label font-medium">Core Values</p>
@@ -77,19 +80,19 @@
                             <p class="info-label font-medium flex items-center gap-2"><i
                                     class="material-icons text-lg">email</i>Email</p>
                             <a class="info-value text-[var(--primary-color)] hover:underline"
-                                href="mailto:organization4@campusconnect.edu">organization4@campusconnect.edu</a>
+                                href="mailto:organization4@campusconnect.edu">{{ $organizations->email }}</a>
                         </div>
                         <div class="info-grid-item">
                             <p class="info-label font-medium flex items-center gap-2"><i
                                     class="material-icons text-lg">language</i>Website</p>
                             <a class="info-value text-[var(--primary-color)] hover:underline"
                                 href="https://campusconnect.edu/organization4" rel="noopener noreferrer"
-                                target="_blank">campusconnect.edu/organization4</a>
+                                target="_blank">{{ $organizations->website }}</a>
                         </div>
                         <div class="info-grid-item">
                             <p class="info-label font-medium flex items-center gap-2"><i
                                     class="material-icons text-lg">location_on</i>Office Location</p>
-                            <p class="info-value">Student Union Building, Room 305</p>
+                            <p class="info-value">STT Terpadu Nurul Fikri, Jakarta Selatan</p>
                         </div>
                     </div>
                 </section>
