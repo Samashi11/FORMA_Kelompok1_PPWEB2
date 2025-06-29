@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Forum;
 use App\Models\Comment;
+use App\Models\Organization;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,6 +14,35 @@ class ForumController extends Controller
     {
         $forums = Forum::all();
         return view('forum', compact('forums'));
+    }
+
+    public function create()
+    {
+        $organizations = Organization::all(); // Ambil semua organisasi untuk dropdown
+
+        return view('create-forum', compact('organizations'));
+    }
+
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'content' => 'required|string',
+            'organization' => 'nullable|string|max:255',
+        ]);
+
+        // Rename key sesuai kolom tabel (misal: event_title)
+        $data = [
+            'title' => $validated['title'],
+            'content' => $validated['content'],
+            'organization_id' => $validated['organization'] ?? null,
+            'created_by' => Auth::id(), // Ambil ID user yang membuat event
+        ];
+
+        // Simpan data
+        $forum = Forum::create($data);
+
+        return redirect()->route('forum.detail', $forum);
     }
 
     public function detail($id)
