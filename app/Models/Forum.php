@@ -25,4 +25,9 @@ class Forum extends Model
 	{
 		return $this->belongsTo(User::class, 'created_by');
 	}
+
+	public function comments()
+	{
+		return $this->hasMany(Comment::class, 'forum_id', 'id');
+	}
 }
