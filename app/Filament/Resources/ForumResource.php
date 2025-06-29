@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\ForumResource\Pages;
 use App\Filament\Resources\ForumResource\RelationManagers;
+use App\Filament\Resources\ForumResource\RelationManagers\CommentsRelationManager;
 use App\Models\Forum;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -16,6 +17,7 @@ use Filament\Forms\Components\Select;
 use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Auth;
 
 class ForumResource extends Resource
 {
@@ -42,10 +44,8 @@ class ForumResource extends Resource
                     ->rows(6)
                     ->label('Isi Diskusi'),
 
-                Select::make('created_by')
-                    ->relationship('creator', 'name')
-                    ->required()
-                    ->label('Dibuat oleh'),
+                 Forms\Components\Hidden::make('created_by')
+                        ->default(Auth::id()),
             ]);
     }
 
@@ -74,7 +74,7 @@ class ForumResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            CommentsRelationManager::class
         ];
     }
 

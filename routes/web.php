@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ForumController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrganizationController;
@@ -23,6 +24,10 @@ Route::get('/create-event', [EventController::class, 'create'])->middleware(['au
 
 Route::post('/event', [EventController::class, 'store'])->middleware(['auth', 'verified'])->name('event.store');
 // Route::get('/dashboard', [EventController::class, 'indexHome'])->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/forum', [ForumController::class, 'index'])->name('forum');
+Route::get('/forum/{id}', [ForumController::class, 'detail'])->name('forum.detail');
+Route::post('/save-comment', [ForumController::class, 'saveComment'])->name('save.comment');
 
 Route::middleware('auth')->group(function () {
 	Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

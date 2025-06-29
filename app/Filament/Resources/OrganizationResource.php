@@ -50,6 +50,16 @@ class OrganizationResource extends Resource
 					->required()
 					->label('Tipe Organisasi'),
 
+				Forms\Components\Select::make('color')
+					->options([
+						'blue' => 'blue',
+						'yellow' => 'yellow',
+						'red' => 'red'
+					])
+					->required()
+					->label('Warna Organisasi'),
+
+
 				Forms\Components\TextInput::make('ketua')
 					->maxLength(255)
 					->label('Ketua Organisasi'),
