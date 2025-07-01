@@ -36,6 +36,11 @@ class EventResource extends Resource
 					->required()
 					->label('Tanggal Acara'),
 
+				Forms\Components\TextInput::make('pembicara')
+					->required()
+					->maxLength(255)
+					->label('Pembicara'),
+
 				Forms\Components\TextInput::make('location')
 					->required()
 					->maxLength(255)
@@ -61,6 +66,11 @@ class EventResource extends Resource
 			->columns([
 				Tables\Columns\TextColumn::make('title')
 					->label('Nama Acara')
+					->searchable()
+					->sortable(),
+
+				Tables\Columns\TextColumn::make('pembicara')
+					->label('Pembicara')
 					->searchable()
 					->sortable(),
 
