@@ -28,12 +28,12 @@
             font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;
         }
 
-        .form-input {
+        /* .form-input {
             @apply border rounded px-4 py-2;
             background-color: var(--input-background);
             border-color: var(--border-color);
 
-        }
+        } */
 
         .form-input:focus {
             @apply border outline-none transition-shadow duration-200;
