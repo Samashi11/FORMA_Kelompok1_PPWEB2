@@ -10,6 +10,10 @@ use Dom\Comment;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Database\Seeders\CommentSeeder;
+use Database\Seeders\EventSeeder;
+use Database\Seeders\ForumSeeder;
+use Database\Seeders\OrganizationSeeder;
 use Faker\Factory;
 
 class DatabaseSeeder extends Seeder
@@ -62,11 +66,11 @@ class DatabaseSeeder extends Seeder
 			'password' => Hash::make('fulan123'),
 		]);
 
-		// $this->call([
-		// 	OrganizationSeeder::class,
-		// 	EventSeeder::class,
-		// 	ForumSeeder::class,
-		// 	CommentSeeder::class,
-		// ]);
+		$this->call([
+			OrganizationSeeder::class,
+			EventSeeder::class,
+			ForumSeeder::class,
+			CommentSeeder::class,
+		]);
 	}
 }
