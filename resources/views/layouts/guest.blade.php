@@ -16,9 +16,14 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen flex flex-col items-center justify-center bg-blue-500">
-            <div class="w-full max-w-full p-4">
+            {{-- <div class="w-full max-w-full p-4">
+                {{ $slot }}
+            </div> --}}
+
+            <div class="min-h-screen bg-blue-500">
                 {{ $slot }}
             </div>
+            
         </div>
     </body>
 </html>

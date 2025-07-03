@@ -23,6 +23,15 @@
                         class="form-input block w-full rounded-lg border h-11 px-4 text-sm shadow-sm focus:outline-none"
                         id="event-title" name="title" placeholder="e.g., Annual Tech Conference" type="text" />
                 </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-[var(--text-primary)] pb-1.5"
+                        for="event-speaker">Speaker</label>
+                    <input
+                        class="form-input block w-full rounded-lg border h-11 px-4 text-sm shadow-sm focus:outline-none"
+                        id="event-speaker" name="speaker" placeholder="e.g., John Doe" type="text" />
+                </div>
+
                 <div>
                     <label class="block text-sm font-medium text-[var(--text-primary)] pb-1.5"
                         for="event-description">Description</label>
