@@ -43,7 +43,7 @@ class EventController extends Controller
 		$validated = $request->validate([
 			'title' => 'required|string|max:255',
 			'description' => 'required|string',
-			'pembicara' => 'required|string|max:255', // Validasi untuk pembicara
+			'speaker' => 'required|string|max:255', // Validasi untuk speaker
 			'location' => 'required|string|max:255',
 			'organization' => 'nullable|string|max:255',
 			'event_date' => 'required|date',
@@ -55,7 +55,7 @@ class EventController extends Controller
 			'title' => $validated['title'],
 			'description' => $validated['description'],
 			'location' => $validated['location'],
-			'pembicara' => $validated['pembicara'], // Tambahkan pembicara ke data
+			'pembicara' => $validated['speaker'], // Tambahkan pembicara ke data
 			'organization_id' => $validated['organization'] ?? null,
 			'event_date' => $validated['event_date'],
 			'created_by' => Auth::id(), // Ambil ID user yang membuat event

@@ -1,5 +1,3 @@
-
-
 <x-guest-layout>
     <div class="min-h-screen bg-blue-500 flex items-center justify-center px-4 sm:px-6">
         <div class="w-full max-w-md sm:max-w-lg">

@@ -23,8 +23,9 @@
             <p class="text-base text-[#0d151c]">
                 Bergabunglah dengan para inovator, pemimpin industri, dan pemikir visioner di {{ $event->title }}.
             </p>
-            <button class="rounded-full bg-[#0b80ee] text-white h-10 px-4 text-sm font-bold w-max">Daftar
-                Sekarang</button>
+            @if (auth()->user()->role === 'mahasiswa')
+                <button class="rounded-full bg-[#0b80ee] text-white h-10 px-4 text-sm font-bold w-max"> <a href="https://forms.gle/ZvEafZ4UbahumeGJ7">Daftar Sekarang</a></button>
+            @endif
         </section>
 
         <!-- Tentang -->

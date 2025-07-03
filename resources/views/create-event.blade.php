@@ -44,7 +44,8 @@
                         for="event-location">Location</label>
                     <input
                         class="form-input block w-full rounded-lg border h-11 px-4 text-sm shadow-sm focus:outline-none"
-                        id="event-location" name="location" placeholder="e.g., Main Auditorium, Online" type="text" />
+                        id="event-location" name="location" placeholder="e.g., Main Auditorium, Online"
+                        type="text" />
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-[var(--text-primary)] pb-1.5"
@@ -54,7 +55,7 @@
                         id="event-organization" name="organization"
                         style="background-image: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 20 20%27%3e%3cpath stroke=%27%236b7280%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%271.5%27 d=%27M6 8l4 4 4-4%27/%3e%3c/svg%3e'); background-position: right 0.5rem center; background-size: 1.5em 1.5em;">
                         <option hidden value="">Select organization</option>
-                        @foreach($organizations as $organization)
+                        @foreach ($organizations as $organization)
                             <option value="{{ $organization->id }}">{{ $organization->name }}</option>
                         @endforeach
                     </select>
@@ -93,9 +94,7 @@
                 <div class="pt-4 flex justify-end">
                     <button
                         class="btn-primary flex items-center justify-center rounded-lg h-11 px-6 text-sm font-semibold shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary-color)] transition-colors"
-                        type="submit"
-                        formaction="{{ route('event.store') }}"
-                        formmethod="POST">
+                        type="submit" formaction="{{ route('event.store') }}" formmethod="POST">
                         Create Event
                     </button>
                 </div>
