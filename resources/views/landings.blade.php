@@ -73,7 +73,7 @@
                             <a class="nav-link text-sm font-medium leading-normal" href="#">Home</a>
                             <a class="nav-link text-sm font-medium leading-normal" href="#">Organizations</a>
                             <a class="nav-link text-sm font-medium leading-normal" href="#">Events</a>
-                            <a class="nav-link text-sm font-medium leading-normal" href="#">Resources</a>
+                            <a class="nav-link text-sm font-medium leading-normal" href="#">Forums</a>
                         </nav>
                     </div>
                     <div class="flex items-center gap-4">
