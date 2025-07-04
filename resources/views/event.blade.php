@@ -104,18 +104,6 @@
                             </div>
                         </div> --}}
                     @endforeach
-                    <div class="card">
-                        <div class="w-full h-56 bg-center bg-no-repeat bg-cover" style='''>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-[var(--text-primary)] mb-2">Tech Innovators
-                                Club</h3>
-                            <p class="text-sm text-[var(--text-secondary)]">Building innovative tech solutions
-                                and fostering a community of aspiring developers and entrepreneurs.</p>
-                            <a class="inline-block mt-4 text-[var(--primary-color)] font-medium hover:underline"
-                                href="#">Learn More →</a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>

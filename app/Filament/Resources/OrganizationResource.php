@@ -35,7 +35,7 @@ class OrganizationResource extends Resource
 
 				Forms\Components\FileUpload::make('logo')
 					->image()
-					->maxSize(1024)
+					->maxSize(2048)
 					->label('Logo'),
 
 				Forms\Components\Select::make('type')
@@ -50,14 +50,14 @@ class OrganizationResource extends Resource
 					->required()
 					->label('Tipe Organisasi'),
 
-				Forms\Components\Select::make('color')
-					->options([
-						'blue' => 'blue',
-						'yellow' => 'yellow',
-						'red' => 'red'
-					])
-					->required()
-					->label('Warna Organisasi'),
+				// Forms\Components\Select::make('color')
+				// 	->options([
+				// 		'blue' => 'blue',
+				// 		'yellow' => 'yellow',
+				// 		'red' => 'red'
+				// 	])
+				// 	->required()
+				// 	->label('Warna Organisasi'),
 
 
 				Forms\Components\TextInput::make('ketua')
@@ -83,7 +83,6 @@ class OrganizationResource extends Resource
 					->label('Email Organisasi'),
 
 				Forms\Components\TextInput::make('website')
-					->url()
 					->maxLength(255)
 					->label('Website Organisasi'),
 

@@ -56,47 +56,6 @@
                             </div>
                         </div>
                     @endforeach
-                    <div class="card">
-                        <div class="w-full h-56 bg-center bg-no-repeat bg-cover"
-                            style='background-image: url("{{ $org->image_url }}");'>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-[var(--text-primary)] mb-2">Tech Innovators
-                                Club</h3>
-                            <p class="text-sm text-[var(--text-secondary)]">Building innovative tech solutions
-                                and fostering a community of aspiring developers and entrepreneurs.</p>
-                            <a class="inline-block mt-4 text-[var(--primary-color)] font-medium hover:underline"
-                                href="#">Learn More →</a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="w-full h-56 bg-center bg-no-repeat bg-cover"
-                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDfjlLSSN7xYEvDhFtHse4LSWHfr_QQP86fL2MqL-PgHb8RQ_UwDrm50dvDzimTLcAp6ASkC_rZLKqAxA_Xi5zNNvmMlYA4m5jx8x_dymjOjS3lqvTCLfKZWH9-pEg1My-6puScOEquRWJOqH6nCmLOnnWO6KVaKIU1UKYU65xmwdVujfZSa8pF2MfjC7aT1o6LFa7IUf42OHnmq0XbDu-MrOXzss5hrjvm3nSjAsoDj4LMnyXEAREMfi0bZXw_7TslAo9--scGL6Ie");'>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-[var(--text-primary)] mb-2">Environmental
-                                Action Group</h3>
-                            <p class="text-sm text-[var(--text-secondary)]">Promoting environmental
-                                sustainability on campus and in the local community through action and
-                                education.</p>
-                            <a class="inline-block mt-4 text-[var(--primary-color)] font-medium hover:underline"
-                                href="#">Learn More →</a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="w-full h-56 bg-center bg-no-repeat bg-cover"
-                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAdfgkt_f1gPNXIa7qfLA0MGqnm3y2MWA7lYNcduY5C9A3Cmt8jSsF_Eq-LCVsZN_s_ULV_E1kO2UuvzBnfJgvIQbzACwv_jLWhBLlscAuNEn5dwnYJNfAPLhNoYscFHDAOzIIXnjeO3FQqSLM0W0f802TdDwUuaBjMEk8g6Nkm6fdDV6QkKXORwlMJNqK6yfWcsXdrbpSGa0BJbiGw--iMQLIU9iVQUIujhHOAQ_TtRhI5hX6SeIZJoqTax5B0_eF4GO9Mo_2uyYvI");'>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-[var(--text-primary)] mb-2">Creative Writers
-                                Society</h3>
-                            <p class="text-sm text-[var(--text-secondary)]">Exploring the art of writing in
-                                various forms, from poetry to prose, fostering a supportive community for
-                                writers.</p>
-                            <a class="inline-block mt-4 text-[var(--primary-color)] font-medium hover:underline"
-                                href="#">Learn More →</a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
