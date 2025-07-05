@@ -70,10 +70,15 @@
                                 FORMA</h2>
                         </div>
                         <nav class="hidden md:flex items-center gap-6">
-                            <a class="nav-link text-sm font-medium leading-normal" href="#">Home</a>
-                            <a class="nav-link text-sm font-medium leading-normal" href="#">Organizations</a>
-                            <a class="nav-link text-sm font-medium leading-normal" href="#">Events</a>
-                            <a class="nav-link text-sm font-medium leading-normal" href="#">Forums</a>
+                            <a class="nav-link text-sm font-medium leading-normal" href="{{ route('home') }}">Home</a>
+                            <a
+                                class="nav-link text-sm font-medium leading-normal"href="{{ route('organization') }}">Organizations</a>
+                            <a class="nav-link text-sm font-medium leading-normal"
+                                href="{{ route('event') }}">Events</a>
+                            <a class="nav-link text-sm font-medium leading-normal"
+                                href="{{ route('forum') }}">Forums</a>
+                            <a class="nav-link text-sm font-medium leading-normal" href="{{ route('about-us') }}">About
+                                Us</a>
                         </nav>
                     </div>
                     <div class="flex items-center gap-4">
@@ -221,7 +226,9 @@
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                         <!-- About ORMAWA Section -->
                         <div class="space-y-4">
-                            <h2 class="text-2xl font-bold mb-4 bg-gradient-to-r from-[#00e4d0] to-[#5983e8] text-transparent bg-clip-text">Tentang ORMAWA</h2>
+                            <h2
+                                class="text-2xl font-bold mb-4 bg-gradient-to-r from-[#00e4d0] to-[#5983e8] text-transparent bg-clip-text">
+                                Tentang ORMAWA</h2>
                             <p class="text-[#f1f1f1] leading-relaxed">
                                 ORMAWA (Organisasi Mahasiswa) adalah wadah pengembangan minat, bakat, dan kepemimpinan
                                 mahasiswa di kampus. Di sini, kamu bisa menemukan informasi lengkap seputar unit
@@ -230,7 +237,9 @@
                             </p>
 
                             <div>
-                                <h3 class="font-semibold mb-3 bg-gradient-to-r from-[#00e4d0] to-[#5983e8] text-transparent bg-clip-text">Fitur Utama:</h3>
+                                <h3
+                                    class="font-semibold mb-3 bg-gradient-to-r from-[#00e4d0] to-[#5983e8] text-transparent bg-clip-text">
+                                    Fitur Utama:</h3>
                                 <ul class="list-none space-y-2">
                                     <li class="flex items-start">
                                         <span class="text-[#0fce5d] mr-2">✔</span>
@@ -254,7 +263,9 @@
 
                         <!-- Quick Links Section -->
                         <div class="space-y-4">
-                            <h3 class="text-2xl font-bold mb-4 bg-gradient-to-r from-[#00e4d0] to-[#5983e8] text-transparent bg-clip-text">Quick Links</h3>
+                            <h3
+                                class="text-2xl font-bold mb-4 bg-gradient-to-r from-[#00e4d0] to-[#5983e8] text-transparent bg-clip-text">
+                                Quick Links</h3>
                             <ul class="space-y-3">
                                 <li><a class="hover:text-[var(--primary-color)] transition-colors block"
                                         href="#">Organizations</a></li>
@@ -269,7 +280,9 @@
 
                         <!-- Contact Section -->
                         <div class="space-y-4">
-                            <h3 class="text-2xl font-bold mb-4 bg-gradient-to-r from-[#00e4d0] to-[#5983e8] text-transparent bg-clip-text">Contact Us</h3>
+                            <h3
+                                class="text-2xl font-bold mb-4 bg-gradient-to-r from-[#00e4d0] to-[#5983e8] text-transparent bg-clip-text">
+                                Contact Us</h3>
                             <div class="space-y-2">
                                 <div class="flex">
                                     <span class="w-28 flex-shrink-0">Kampus A:</span>

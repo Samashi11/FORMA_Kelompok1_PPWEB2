@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\ProfileController;
@@ -31,6 +32,8 @@ Route::post('/save-comment', [ForumController::class, 'saveComment'])->name('sav
 Route::get('/create-forum', [ForumController::class, 'create'])->middleware(['auth', 'verified'])->name('forum.create');
 
 Route::post('/forum', [ForumController::class, 'store'])->middleware(['auth', 'verified'])->name('forum.store');
+
+Route::get('/about-us', [AboutUsController::class, 'index'])->name('about-us');
 
 Route::middleware('auth')->group(function () {
 	Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

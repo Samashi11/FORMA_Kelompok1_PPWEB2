@@ -136,10 +136,10 @@
             <!-- Navigation Links -->
             <nav class="hidden md:flex items-center gap-4">
                 <a class="nav-link text-sm font-medium leading-normal" href="{{ route('home') }}">Home</a>
-                <a class="nav-link text-sm font-medium leading-normal"
-                    href="{{ route('organization') }}">Organizations</a>
+                <a class="nav-link text-sm font-medium leading-normal"href="{{ route('organization') }}">Organizations</a>
                 <a class="nav-link text-sm font-medium leading-normal" href="{{ route('event') }}">Events</a>
                 <a class="nav-link text-sm font-medium leading-normal" href="{{ route('forum') }}">Forums</a>
+                <a class="nav-link text-sm font-medium leading-normal" href="{{ route('about-us') }}">About Us</a>                
             </nav>
         </div>
 
